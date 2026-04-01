@@ -6,7 +6,8 @@ Code repository for the paper: Random Token Sparsification for ViT-based Hand Re
    <a href="https://github.com/nttbdrk25">Duy-Dinh Le</a>,
    <a href="https://github.com/nttbdrk25">Thanh Phuong Nguyen</a>,
 </p>
-## Installation
+INSTALLATION
+
 First you need to clone the repo:
 
 ```bash
