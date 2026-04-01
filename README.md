@@ -12,7 +12,6 @@ reduce the computational cost of the token-based description while preserving th
 <strong> INSTALLATION </strong>
 
 First you need to clone the repo:
-
 ```bash
 git clone --recursive https://github.com/phuongttn/rants.git
 cd rants
