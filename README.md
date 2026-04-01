@@ -6,7 +6,7 @@ Code repository for the paper: Random Token Sparsification for ViT-based Hand Re
    <a href="https://github.com/nttbdrk25">Duy-Dinh Le</a>,
    <a href="https://github.com/nttbdrk25">Thanh Phuong Nguyen</a>,
 </p>
-Abtract: Transformer-based models have become the dominant paradigm for hand pose estimation (HPE) and hand mesh
+**Abstract.**: Transformer-based models have become the dominant paradigm for hand pose estimation (HPE) and hand mesh
 recovery (HMR) due to their strong capability in modeling global
 spatial relationships. However, they have been challenging in real
 deployments since the quadratic computational complexity of
