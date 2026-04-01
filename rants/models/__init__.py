@@ -1,0 +1,82 @@
+from .mano_wrapper import MANO
+from .rants import RANTS
+from .discriminator import Discriminator
+
+from ..utils.download import cache_url
+from ..configs import CACHE_DIR_RANTS
+
+
+# NOTE:
+# The original HaMeR codebase uses CACHE_DIR_HAMER as the default cache root.
+# We keep using this config entry here for compatibility with the existing
+# configuration system, even though the model entry points below are renamed
+# to RANTS.
+
+
+def download_models(folder=CACHE_DIR_RANTS):
+    """Download demo assets used for inference.
+
+    This helper is adapted from the original HaMeR package initializer.
+    The downloaded archive name is kept unchanged for compatibility with the
+    released HaMeR asset structure.
+    """
+    import os
+
+    os.makedirs(folder, exist_ok=True)
+    download_files = {
+        "hamer_demo_data.tar.gz": [
+            "https://www.cs.utexas.edu/~pavlakos/hamer/data/hamer_demo_data.tar.gz",
+            folder,
+        ],
+    }
+
+    for file_name, url in download_files.items():
+        output_path = os.path.join(url[1], file_name)
+        if not os.path.exists(output_path):
+            print("Downloading file: " + file_name)
+            output = cache_url(url[0], output_path)
+            assert os.path.exists(output_path), f"{output} does not exist"
+
+            # If the downloaded file is a tarball, extract it in place.
+            if file_name.endswith(".tar.gz"):
+                print("Extracting file: " + file_name)
+                os.system("tar -xvf " + output_path)
+
+
+DEFAULT_RANTS_CHECKPOINT = f"{CACHE_DIR_RANTS}/rants_ckpts/checkpoints/rants.ckpt"
+
+
+def load_rants(checkpoint_path=DEFAULT_RANTS_CHECKPOINT):
+    """Load a RANTS checkpoint together with its model config.
+
+    This function follows the original HaMeR loading logic, but instantiates
+    the renamed RANTS LightningModule. It also applies the same config fixes
+    required by the demo pipeline for ViT-based backbones.
+    """
+    from pathlib import Path
+    from ..configs import get_config
+
+    model_cfg = str(Path(checkpoint_path).parent.parent / "model_config.yaml")
+    model_cfg = get_config(model_cfg, update_cachedir=True)
+
+    # Ensure the bbox shape is defined for ViT-based backbones during demo
+    # inference, matching the original HaMeR assumption.
+    if (model_cfg.MODEL.BACKBONE.TYPE == "vit") and ("BBOX_SHAPE" not in model_cfg.MODEL):
+        model_cfg.defrost()
+        assert (
+            model_cfg.MODEL.IMAGE_SIZE == 256
+        ), f"MODEL.IMAGE_SIZE ({model_cfg.MODEL.IMAGE_SIZE}) should be 256 for ViT backbone"
+        model_cfg.MODEL.BBOX_SHAPE = [192, 256]
+        model_cfg.freeze()
+
+    # Remove backbone pretrained weights when loading a full checkpoint to
+    # avoid conflicts with demo-time model construction.
+    if "PRETRAINED_WEIGHTS" in model_cfg.MODEL.BACKBONE:
+        model_cfg.defrost()
+        model_cfg.MODEL.BACKBONE.pop("PRETRAINED_WEIGHTS")
+        model_cfg.freeze()
+
+    model = RANTS.load_from_checkpoint(checkpoint_path, strict=False, cfg=model_cfg)
+    return model, model_cfg
+
+

@@ -1,0 +1,6 @@
+defaults:
+  - default.yaml
+  - default_rants.yaml
+
+accelerator: gpu
+devices: 1

@@ -1,0 +1,8 @@
+logs/
+*.log
+data/
+outputs/
+checkpoints/
+*.pth
+*.pt
+__pycache__/
