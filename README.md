@@ -13,3 +13,14 @@ First you need to clone the repo:
 ```bash
 git clone --recursive https://github.com/phuongttn/rants.git
 cd rants
+
+We recommend creating a virtual environment for RanTS. You can use venv:
+python3.10 -m venv .rants
+source .rants/bin/activate
+
+or alternatively conda:
+conda create --name rants python=3.10
+conda activate rants
+
+Then, you can install the rest of the dependencies:
+pip install -e .
