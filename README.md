@@ -73,4 +73,11 @@ Additionally, we thank [StabilityAI](https://stability.ai/) for a generous compu
 ## Open-Source Contributions
 - [Wentao Hu](https://github.com/) integrated the hand parameters predicted by HaMeR into SMPL-X – [Mano2Smpl-X](https://github.com/)
 ## Citing
-If you find this code useful for your research, please consider citing the following paper:
+If you find this work useful, please consider citing:
+```bibtex
+@inproceedings{phuong2026rants,
+  title={Random Token Sparsification for ViT-based Hand Representation},
+  author={Phuong Truong and Thanh Tuan Nguyen and Duy-Dinh Le and Thanh Phuong Nguyen},
+  booktitle={MAPR},
+  year={2026}
+}
