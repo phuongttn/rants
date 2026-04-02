@@ -96,7 +96,6 @@ If you find this work useful, please consider citing:
   year={2026}
 }
 ### HaMeR
-```bibtex
 @inproceedings{pavlakos2024reconstructing,
     title={Reconstructing Hands in 3{D} with Transformers},
     author={Pavlakos, Georgios and Shan, Dandan and Radosavovic, Ilija and Kanazawa, Angjoo and Fouhey, David and Malik, Jitendra},
