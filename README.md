@@ -15,6 +15,13 @@ This project is developed based on the HaMeR codebase. We thank the original aut
 - Introduces Random Token Sparsification (RanTS) in the ViT encoder.
 - Reduces redundant tokens during training without modifying the overall pipeline.
 - Maintains comparable performance while improving computational efficiency.
+<p align="center">
+  <img src="assets/rants.pdf" alt="RanTS pipeline" width="900"/>
+</p>
+
+<p align="center">
+  <em>Figure 1. Overview of the proposed RanTS process integrated into a ViT-based hand mesh reconstruction pipeline.</em>
+</p>
 
 ## INSTALLATION
 First you need to clone the repo:
