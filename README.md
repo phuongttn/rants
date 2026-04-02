@@ -58,3 +58,19 @@ Run evaluation on multiple datasets as follows, results are stored in results/ev
 python eval.py --dataset 'FREIHAND-VAL,HO3D-VAL,NEWDAYS-TEST-ALL,NEWDAYS-TEST-VIS,NEWDAYS-TEST-OCC,EPICK-TEST-ALL,EPICK-TEST-VIS,EPICK-TEST-OCC,EGO4D-TEST-ALL,EGO4D-TEST-VIS,EGO4D-TEST-OCC'
 ```
 Results for HInt are stored in results/eval_regression.csv. For FreiHAND and HO-3D you get as output a .json file that can be used for evaluation using their corresponding evaluation processes.
+## ACKNOWLEDGEMENTS 
+Parts of the code are taken or adapted from the following repos:
+
+- [4DHumans](https://github.com/shubham-goel/4D-Humans)
+- [SLAHMR](https://github.com/vye16/slahmr)
+- [ProHMR](https://github.com/nkolot/ProHMR)
+- [SPIN](https://github.com/nkolot/SPIN)
+- [SMPLify-X](https://github.com/vchoutas/smplify-x)
+- [HMR](https://github.com/akanazawa/hmr)
+- [ViTPose](https://github.com/ViTAE-Transformer/ViTPose)
+- [Detectron2](https://github.com/facebookresearch/detectron2)
+Additionally, we thank [StabilityAI](https://stability.ai/) for a generous compute grant that enabled this work.
+## Open-Source Contributions
+- [Wentao Hu](https://github.com/) integrated the hand parameters predicted by HaMeR into SMPL-X – [Mano2Smpl-X](https://github.com/)
+## Citing
+If you find this code useful for your research, please consider citing the following paper:
