@@ -16,7 +16,7 @@ This project is developed based on the HaMeR codebase. We thank the original aut
 - Reduces redundant tokens during training without modifying the overall pipeline.
 - Maintains comparable performance while improving computational efficiency.
 <p align="center">
-  <img src="assets/rants.pdf" alt="RanTS pipeline" width="900"/>
+  <img src="assets/RanTS.jpg" alt="RanTS pipeline" width="900"/>
 </p>
 
 <p align="center">
