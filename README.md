@@ -9,7 +9,7 @@ Code repository for the paper: Random Token Sparsification for ViT-based Hand Re
 <strong>Abstract:</strong> Transformer-based models have become the dominant paradigm for hand pose estimation (HPE) and hand mesh recovery (HMR) due to their strong capability in modeling global spatial relationships. However, they have been challenging in real deployments since the quadratic computational complexity of the transformer-based encoders leads to high training cost and scalability limitations. In consideration of the spatial distribution of hand pixels in real images, it can be realized that the hand region typically occupies a small fraction in the images. So, taking into account the whole spatial patterns of these images would be substantial redundancy for the token representation of the transformer encoders. To this end, Random Token Sparsification (RanTS) is proposed to eliminate a large proportion of the redundant tokens during training. Thereby, RanTS can sharply
 reduce the computational cost of the token-based description while preserving the discriminative features for hand estimation.Experimental results have verified the efficacy of our simple strategy of token sparsification. For instance, with 25% rate of token elimination (i.e., one-fourth token reduction), RanTS for hand pose estimation obtained 84.2% AUC on HO3D-v2 [1], nearly the same 84.5% with full token representation, while the computational cost of RanTS is significantly decreased by about 11.83% training cost and 15% GPU RAM consumption. 
 
-This project is developed based on the HaMeR \cite{pavlakos2024reconstructing} codebase. We thank the original authors for their open-source contribution.
+This project is developed based on the HaMeR[1] codebase. We thank the original authors for their open-source contribution.
 
 ## Key Differences from HaMeR
 - Introduces Random Token Sparsification (RanTS) in the ViT encoder.
@@ -95,10 +95,7 @@ If you find this work useful, please consider citing:
   booktitle={MAPR},
   year={2026}
 }
-### HaMeR
-@inproceedings{pavlakos2024reconstructing,
-    title={Reconstructing Hands in 3{D} with Transformers},
-    author={Pavlakos, Georgios and Shan, Dandan and Radosavovic, Ilija and Kanazawa, Angjoo and Fouhey, David and Malik, Jitendra},
-    booktitle={CVPR},
-    year={2024}
-}
+```
+## References
+[1] Georgios Pavlakos, Dandan Shan, Ilija Radosavovic, Angjoo Kanazawa, and David Fouhey.  
+*Reconstructing Hands in 3D with Transformers*. CVPR 2024.
