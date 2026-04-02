@@ -57,3 +57,4 @@ Run evaluation on multiple datasets as follows, results are stored in results/ev
 ```bash
 python eval.py --dataset 'FREIHAND-VAL,HO3D-VAL,NEWDAYS-TEST-ALL,NEWDAYS-TEST-VIS,NEWDAYS-TEST-OCC,EPICK-TEST-ALL,EPICK-TEST-VIS,EPICK-TEST-OCC,EGO4D-TEST-ALL,EGO4D-TEST-VIS,EGO4D-TEST-OCC'
 ```
+Results for HInt are stored in results/eval_regression.csv. For FreiHAND and HO-3D you get as output a .json file that can be used for evaluation using their corresponding evaluation processes.
