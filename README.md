@@ -51,3 +51,9 @@ Then you can start training using the following command:
 python train.py exp_name=rants data=mix_all experiment=rants_vit_transformer trainer=gpu launcher=local
 ```
 Checkpoints and logs will be saved to ./logs/.
+### EVALUATION
+Download the evaluation metadata to ./hamer_evaluation_data/. Additionally, download the FreiHAND, HO-3D, and HInt dataset images and update the corresponding paths in hamer/configs/datasets_eval.yaml.
+Run evaluation on multiple datasets as follows, results are stored in results/eval_regression.csv.
+```bash
+python eval.py --dataset 'FREIHAND-VAL,HO3D-VAL,NEWDAYS-TEST-ALL,NEWDAYS-TEST-VIS,NEWDAYS-TEST-OCC,EPICK-TEST-ALL,EPICK-TEST-VIS,EPICK-TEST-OCC,EGO4D-TEST-ALL,EGO4D-TEST-VIS,EGO4D-TEST-OCC'
+```
