@@ -31,3 +31,7 @@ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu117
 pip install -e .[all]
 pip install -v -e third-party/ViTPose
 ```
+You also need to download the trained models:
+```bash
+bash fetch_demo_data.sh
+```
