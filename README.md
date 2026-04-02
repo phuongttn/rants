@@ -35,9 +35,19 @@ You also need to download the trained models:
 ```bash
 bash fetch_demo_data.sh
 ```
-## DEMO
+### DEMO
 ```bash
 python demo.py \
     --img_folder example_data --out_folder demo_out \
     --batch_size=48 --side_view --save_mesh --full_frame
 ```
+### TRAINING 
+First, download the training data to ./hamer_training_data/ by running:
+```bash
+bash fetch_training_data.sh
+```
+Then you can start training using the following command:
+```bash
+python train.py exp_name=rants data=mix_all experiment=rants_vit_transformer trainer=gpu launcher=local
+```
+Checkpoints and logs will be saved to ./logs/.
