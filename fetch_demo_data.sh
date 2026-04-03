@@ -1,4 +1,4 @@
 # Google drive link to download the model
-gdown https://drive.google.com/uc?id=1mv7CUAnm73oKsEEG1xE3xH2C_oqcFSzT
+pip install gdown
+gdown --folder https://drive.google.com/drive/folders/1-S8oZa3TWx41bblIub32L6aqkgp3p3oj?usp=sharing
 
-tar --warning=no-unknown-keyword --exclude=".*" -xvf rants_demo_data.tar.gz
