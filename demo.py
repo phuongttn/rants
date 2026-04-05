@@ -5,11 +5,13 @@ import os
 import cv2
 import numpy as np
 
-from hamer.configs import CACHE_DIR_HAMER
-from hamer.models import HAMER, download_models, load_hamer, DEFAULT_CHECKPOINT
-from hamer.utils import recursive_to
-from hamer.datasets.vitdet_dataset import ViTDetDataset, DEFAULT_MEAN, DEFAULT_STD
-from hamer.utils.renderer import Renderer, cam_crop_to_full
+from rants.configs import CACHE_DIR_RANTS
+from rants.models import RANTS, download_models, load_hamer, DEFAULT_CHECKPOINT
+from rants.utils import recursive_to
+from rants.datasets.vitdet_dataset import ViTDetDataset, DEFAULT_MEAN, DEFAULT_STD
+from rants.utils.renderer import Renderer, cam_crop_to_full
+from detectron2.config import LazyConfig
+import rants 
 
 LIGHT_BLUE=(0.65098039,  0.74117647,  0.85882353)
 
@@ -33,7 +35,7 @@ def _load_compat(*args, **kwargs):
 torch.load = _load_compat
 
 def main():
-    parser = argparse.ArgumentParser(description='HaMeR demo code')
+    parser = argparse.ArgumentParser(description='RanTS demo code')
     parser.add_argument('--checkpoint', type=str, default=DEFAULT_CHECKPOINT, help='Path to pretrained model checkpoint')
     parser.add_argument('--img_folder', type=str, default='images', help='Folder with input images')
     parser.add_argument('--out_folder', type=str, default='out_demo', help='Output folder to save rendered results')
@@ -48,7 +50,7 @@ def main():
     args = parser.parse_args()
 
     # Download and load checkpoints
-    download_models(CACHE_DIR_HAMER)
+    download_models(CACHE_DIR_RANTS)
     model, model_cfg = load_hamer(args.checkpoint)
 
     # Setup HaMeR model
@@ -58,10 +60,8 @@ def main():
 
     # Load detector
     from hamer.utils.utils_detectron2 import DefaultPredictor_Lazy
-    if args.body_detector == 'vitdet':
-        from detectron2.config import LazyConfig
-        import hamer
-        cfg_path = Path(hamer.__file__).parent/'configs'/'cascade_mask_rcnn_vitdet_h_75ep.py'
+    if args.body_detector == 'vitdet':  
+        cfg_path = Path(rants.__file__).parent/'configs'/'cascade_mask_rcnn_vitdet_h_75ep.py'
         detectron2_cfg = LazyConfig.load(str(cfg_path))
         detectron2_cfg.train.init_checkpoint = "https://dl.fbaipublicfiles.com/detectron2/ViTDet/COCO/cascade_mask_rcnn_vitdet_h/f328730692/model_final_f05665.pkl"
         for i in range(3):
