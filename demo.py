@@ -6,7 +6,7 @@ import cv2
 import numpy as np
 
 from rants.configs import CACHE_DIR_RANTS
-from rants.models import RANTS, download_models, load_hamer, DEFAULT_CHECKPOINT
+from rants.models import RANTS, download_models, load_rants, DEFAULT_CHECKPOINT
 from rants.utils import recursive_to
 from rants.datasets.vitdet_dataset import ViTDetDataset, DEFAULT_MEAN, DEFAULT_STD
 from rants.utils.renderer import Renderer, cam_crop_to_full
@@ -50,16 +50,16 @@ def main():
     args = parser.parse_args()
 
     # Download and load checkpoints
-    download_models(CACHE_DIR_RANTS)
-    model, model_cfg = load_hamer(args.checkpoint)
+    #download_models(CACHE_DIR_RANTS)
+    model, model_cfg = load_rants(args.checkpoint)
 
-    # Setup HaMeR model
+    # Setup RanTS model
     device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
     model = model.to(device)
     model.eval()
 
     # Load detector
-    from hamer.utils.utils_detectron2 import DefaultPredictor_Lazy
+    from rants.utils.utils_detectron2 import DefaultPredictor_Lazy
     if args.body_detector == 'vitdet':  
         cfg_path = Path(rants.__file__).parent/'configs'/'cascade_mask_rcnn_vitdet_h_75ep.py'
         detectron2_cfg = LazyConfig.load(str(cfg_path))
