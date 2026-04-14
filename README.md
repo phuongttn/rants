@@ -78,7 +78,7 @@ Checkpoints and logs will be saved to ./logs/.
 Download the evaluation metadata to ./hamer_evaluation_data/. Additionally, download the FreiHAND, HO-3D, and HInt dataset images and update the corresponding paths in hamer/configs/datasets_eval.yaml.
 Run evaluation on multiple datasets as follows, results are stored in results/eval_regression.csv.
 ```bash
-python eval.py --dataset 'FREIHAND-VAL,HO3D-VAL,NEWDAYS-TEST-ALL,NEWDAYS-TEST-VIS,NEWDAYS-TEST-OCC,EPICK-TEST-ALL,EPICK-TEST-VIS,EPICK-TEST-OCC,EGO4D-TEST-ALL,EGO4D-TEST-VIS,EGO4D-TEST-OCC'
+python eval.py --dataset 'FREIHAND-VAL,HO3D-VAL'
 ```
 Results for HInt are stored in results/eval_regression.csv. For FreiHAND and HO-3D you get as output a .json file that can be used for evaluation using their corresponding evaluation processes.
 ## ACKNOWLEDGEMENTS 
