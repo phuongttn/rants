@@ -92,6 +92,7 @@ Parts of the code are taken or adapted from the following repos:
 - [HMR](https://github.com/akanazawa/hmr)
 - [ViTPose](https://github.com/ViTAE-Transformer/ViTPose)
 - [Detectron2](https://github.com/facebookresearch/detectron2)
+
 Additionally, we thank [StabilityAI](https://stability.ai/) for a generous compute grant that enabled this work.
 ## Open-Source Contributions
 - [Wentao Hu](https://github.com/) integrated the hand parameters predicted by HaMeR into SMPL-X – [Mano2Smpl-X](https://github.com/)
