@@ -3,8 +3,8 @@ Code repository for the paper: Random Token Sparsification for ViT-based Hand Re
 <p align="left">
   <a href="https://github.com/phuongttn">Truong Thi Ngoc Phuong</a>,
   <a href="https://github.com/nttbdrk25">Thanh Tuan Nguyen</a>,
-   <a href="https://github.com/nttbdrk25">Duy-Dinh Le</a>,
-   <a href="https://github.com/nttbdrk25">Thanh Phuong Nguyen</a>,
+   <a>Duy-Dinh Le</a>,
+   <a>Thanh Phuong Nguyen</a>,
 </p>
 <div style="display: flex; gap: 10px;">
   <img src="assets/test1.png" width="24%">
