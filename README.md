@@ -99,9 +99,9 @@ Additionally, we thank [StabilityAI](https://stability.ai/) for a generous compu
 ## Citing
 If you find this work useful, please consider citing:
 ```bibtex
-@inproceedings{phuong2026rants,
+@inproceedings{rants2026,
   title={Random Token Sparsification for ViT-based Hand Representation},
-  author={Phuong Truong and Thanh Tuan Nguyen and Duy-Dinh Le and Thanh Phuong Nguyen},
+  author={Anonymous Authors},
   booktitle={MAPR},
   year={2026}
 }
