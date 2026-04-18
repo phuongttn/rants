@@ -2,7 +2,6 @@
 # The dataset splits, annotation files, and image directories follow the
 # original HaMeR setup to ensure a fair and directly comparable evaluation
 # protocol across methods.
-
 FREIHAND-VAL:
     TYPE: ImageDataset
     DATASET_FILE: /data/phuongttn/datasets/rants_evaluation_data/rants_evaluation_data/freihand_val.npz
@@ -14,19 +13,6 @@ HO3D-VAL:
     DATASET_FILE: /data/phuongttn/datasets/rants_evaluation_data/rants_evaluation_data/ho3d_val.npz
     IMG_DIR: /data/phuongttn/datasets/rants_evaluation_data/rants_evaluation_data/HO3D_v2/evaluation/
     KEYPOINT_LIST: [0] # Dummy
-
-HO3D-V3-VAL:
-    TYPE: ImageDataset
-    DATASET_FILE:/rants_evaluation_data/rants_evaluation_data/ho3d_v3_val.npz
-    IMG_DIR: /rants_evaluation_data/rants_evaluation_data/HO3D_v3/evaluation/
-    KEYPOINT_LIST: [0] # Dummy
-    
-DEXYCB:
-    TYPE: ImageDataset
-    DATASET_FILE: /rants_evaluation_data/rants_evaluation_data/dexycb.npz
-    IMG_DIR: /rants_evaluation_data/rants_evaluation_data/DexYCB/evaluation/
-    KEYPOINT_LIST: [0] # Dummy
-    
 EGO4D-TEST-ALL:
     TYPE: ImageDataset
     DATASET_FILE: /rants_evaluation_data/TEST_ego4d_img_all.npz
