@@ -28,7 +28,7 @@ MODEL:
   IMAGE_STD: [0.229, 0.224, 0.225]
   BACKBONE:
     TYPE: vit
-    PRETRAINED_WEIGHTS: /data/phuongttn/datasets/hamer_training_data/vitpose_backbone.pth
+    PRETRAINED_WEIGHTS: /data/phuongttn/datasets/rants_training_data/vitpose_backbone.pth
     TOKEN_DROP_RATIO: 0.25
   MANO_HEAD:
     TYPE: transformer_decoder
