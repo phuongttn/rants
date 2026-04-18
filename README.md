@@ -65,7 +65,7 @@ python demo.py \
     --batch_size=48 --side_view --save_mesh --full_frame
 ```
 ### TRAINING 
-First, download the training data to ./hamer_training_data/ by running:
+First, download the training data to ./rants_training_data/ by running:
 ```bash
 bash fetch_training_data.sh
 ```
